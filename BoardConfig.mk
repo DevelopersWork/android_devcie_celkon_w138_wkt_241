@@ -1,0 +1,45 @@
+USE_CAMERA_STUB := true
+
+# inherit from the proprietary version
+-include vendor/celkon/w138_wkt_241/BoardConfigVendor.mk
+
+TARGET_ARCH := arm
+TARGET_NO_BOOTLOADER := true
+TARGET_BOARD_PLATFORM := scx15
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_SMP := true
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+TARGET_BOOTLOADER_BOARD_NAME := w138_wkt_241
+
+BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_PAGESIZE := 2048
+
+# fix this up by examining /proc/mtd on a running device
+BOARD_BOOTIMAGE_PARTITION_SIZE := 12058624
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 13212057.6
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 824180736
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1374683136
+BOARD_FLASH_BLOCK_SIZE := 131072
+
+TARGET_PREBUILT_KERNEL := device/celkon/w138_wkt_241/prebuilt/kernel
+
+# Including FSTAB FROM DEVICE
+TARGET_RECOVERY_FSTAB := device/celkon/w138_wkt_241/recovery/recovery.fstab
+
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Device Resolution
+DEVICE_RESOLUTION:=480*800
+
+# TeamWin Recovery Project TWRP
+TW_THEME := portrait_mdpi
+
+
+
+
+
